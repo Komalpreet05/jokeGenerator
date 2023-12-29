@@ -9,28 +9,46 @@ const urlHin = "https://hindi-jokes-api.onrender.com/jokes?api_key=4a160d0499f1e
 //     console.log(language.value);
 // })
 
-let getJokeHin = () => {
+async function checkHin() {
     jokeContainer.classList.remove("fade");
-    fetch(urlHin)
-        .then(data => data.json())
-        .then(item => {
-            console.log(item);
-            jokeContainer.textContent = item.jokeContent;
-            jokeContainer.classList.add("fade");
-        });
+    const res = await fetch(urlHin);
+    const data = await res.json();
+    jokeContainer.textContent = data.jokeContent;
+    jokeContainer.classList.add("fade");
+}
+
+async function checkEng() {
+    jokeContainer.classList.remove("fade");
+    const res = await fetch(urlEng);
+    const data = await res.json();
+    jokeContainer.textContent = data.joke;
+    jokeContainer.classList.add("fade");
 }
 
 
-let getJokeEng = () => {
-    jokeContainer.classList.remove("fade");
-    fetch(urlEng)
-        .then(data => data.json())
-        .then(item => {
-            console.log(item);
-            jokeContainer.textContent = item.joke;
-            jokeContainer.classList.add("fade");
-        });
-}
+// let getJokeHin = () => {
+//     jokeContainer.classList.remove("fade");
+//     fetch(urlHin)
+//         .then(data => data.json())
+//         .then(item => {
+//             console.log(item);
+//             jokeContainer.textContent = item.jokeContent;
+//             jokeContainer.classList.add("fade");
+
+//         });
+// }
+
+
+// let getJokeEng = () => {
+//     jokeContainer.classList.remove("fade");
+//     fetch(urlEng)
+//         .then(data => data.json())
+//         .then(item => {
+//             console.log(item);
+//             jokeContainer.textContent = item.joke;
+//             jokeContainer.classList.add("fade");
+//         });
+// }
 console.log("check", language.value);
 
 
@@ -38,12 +56,12 @@ btn.addEventListener("click", () => {
     if (language.value === "english") {
         console.log("Eng");
         console.log("check", language.value);
-        getJokeEng();
+        checkEng();
     }
     if (language.value === "hindi") {
         console.log("hin");
         console.log("check", language.value);
-        getJokeHin();
+        checkHin();
     }
 
 })
