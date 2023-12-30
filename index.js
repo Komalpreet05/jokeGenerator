@@ -26,6 +26,7 @@ async function checkEng() {
 }
 
 
+
 // let getJokeHin = () => {
 //     jokeContainer.classList.remove("fade");
 //     fetch(urlHin)
@@ -65,4 +66,6 @@ btn.addEventListener("click", () => {
     }
 
 })
+
+checkEng();
 
