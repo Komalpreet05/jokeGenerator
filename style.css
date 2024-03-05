@@ -58,13 +58,12 @@ p {
   line-height: 35px;
   word-wrap: break-word;
   margin: 30px 0;
-  opacity: 0;
 }
 
-.fade {
+/* .fade {
   opacity: 1;
-  transition: opacity 1.5s;
-}
+  transition: opacity 20s;
+} */
 button#generate:hover {
   background: #ffbf05;
   color: black;
@@ -84,15 +83,27 @@ button#generate {
   border: 2px solid #ffbf05;
   transition: all 0.5s linear;
 }
-
+/* 
 h2 {
   text-align: center;
   color: blue;
   font-size: 46px;
   padding: 10px;
   /* background-color: white; */
-  /* margin-top: 20px; */
+/* margin-top: 20px; 
+} */
+
+h2 {
+  text-align: center;
+  color: white;
+  font-size: 5.3em;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+    0 10px 0 #ccc, 0 11px 0 #ccc, 0 12px 0 #ccc, 0 20px 30px rgba(0, 0, 0, 0.5);
 }
+
 select#language {
   padding: 5px;
   background-color: #bfbfbf;
@@ -115,4 +126,28 @@ select#language:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.option2 {
+  display: none;
+}
+
+.option2.active {
+  display: flex;
+}
+
+.option2 {
+  justify-content: center;
+  align-items: center;
+}
+
+.option1 {
+  opacity: 0;
+  /* display: none; */
+}
+
+.option1.active {
+  opacity: 1;
+  /* display: block; */
+  transition: opacity 2.5s;
 }
